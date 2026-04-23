@@ -27,7 +27,7 @@
 		request.setCharacterEncoding("UTF-8");
 		String grade="";	
 		try {
-			String sql = "SELECT * FROM tbl_member_202205 ORDER BY custno" ;
+			String sql = "SELECT * FROM tbl_member ORDER BY custno" ;
 			PreparedStatement pstmt = conn.prepareStatement(sql) ;
 			ResultSet rs = pstmt.executeQuery() ;
 			while(rs.next()) {

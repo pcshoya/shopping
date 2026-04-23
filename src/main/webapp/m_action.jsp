@@ -15,7 +15,7 @@ String city = request.getParameter("city");
 try{
     Statement stmt = conn.createStatement();
     int result = stmt.executeUpdate(
-        "UPDATE tbl_member_202205 SET "
+        "UPDATE tbl_member SET "
         + "custname='" + custname + "', "
         + "phone='" + phone + "', "
         + "address='" + address + "', "

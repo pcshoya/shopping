@@ -18,7 +18,7 @@
 			request.setCharacterEncoding("UTF-8");
 			String custno = request.getParameter("custno") ;
 			try {	
-			String sql = "SELECT * FROM tbl_member_202205 WHERE custno = ?" ;
+			String sql = "SELECT * FROM tbl_member WHERE custno = ?" ;
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, custno);
 			ResultSet rs = pstmt.executeQuery();

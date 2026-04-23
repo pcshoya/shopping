@@ -22,7 +22,7 @@ String city = request.getParameter("city");
 try{
     Statement stmt = conn.createStatement();
     int result = stmt.executeUpdate(
-        "INSERT INTO tbl_member_202205 VALUES('" 
+        "INSERT INTO tbl_member VALUES('" 
         + custno + "','" 
         + custname + "','" 
         + phone + "','" 

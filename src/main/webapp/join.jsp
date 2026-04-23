@@ -18,7 +18,7 @@
         <% 
         	request.setCharacterEncoding("UTF-8");
         	try {
-	    	String sql = "SELECT MAX(custno) + 1 custno FROM tbl_member_202205" ;
+	    	String sql = "SELECT MAX(custno) + 1 custno FROM tbl_member" ;
 	    	PreparedStatement pstmt = conn.prepareStatement(sql); 
 			ResultSet rs = pstmt.executeQuery(); 
 			rs.next();
