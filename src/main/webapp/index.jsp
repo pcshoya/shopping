@@ -19,6 +19,6 @@
        5. 회원정보 조회 프로그램을 작성한다.<br><br>
        6. 회원매출정보 조회 프로그램을 작성한다.
     </section>
-    <jsp:include page="footer.jsp" />
+    <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
