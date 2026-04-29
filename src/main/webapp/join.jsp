@@ -13,10 +13,9 @@
 <section>
     <h2>홈쇼핑 회원 등록</h2>
     <!-- 입력 유효성 검사, action 작성 -->
-    <form method = "post" action="jo_action.jsp" name="frm" onsubmit="return checkIn()">
+    <form name="frm" onsubmit="return checkIn()" action="jo_action.jsp" >
         <table border="1">
         <% 
-        	request.setCharacterEncoding("UTF-8");
         	try {
 	    	String sql = "SELECT MAX(custno) + 1 custno FROM tbl_member" ;
 	    	PreparedStatement pstmt = conn.prepareStatement(sql); 

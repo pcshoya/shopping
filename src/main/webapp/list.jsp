@@ -24,7 +24,6 @@
 		<td> 거주지역 </td>
 	</tr>
 	<%
-		request.setCharacterEncoding("UTF-8");
 		String grade="";	
 		try {
 			String sql = "SELECT * FROM tbl_member ORDER BY custno" ;
@@ -63,6 +62,6 @@ catch(Exception e){
 </table>
 </form>
 </section>
-<jsp:include page="footer.jsp" />
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -22,11 +22,7 @@
 	<% 
 		String grade="";
 		try {
-		String sql= "SELECT me.custno, me.custname, me.grade, sum(mo.price) price " +
-				"FROM tbl_member me, tbl_money mo " +
-				"WHERE me.custno = mo.custno " +
-				"GROUP BY me.custno, me.custname, me.grade " +
-				"ORDER BY sum(mo.price) desc" ;	
+		String sql = "SELECT me.custno, me.custname, me.grade, sum(mo.price) price FROM tbl_member me, tbl_money mo WHERE me.custno = mo.custno GROUP BY me.custno, me.custname, me.grade ORDER BY sum(mo.price) desc";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
 		while(rs.next()) {

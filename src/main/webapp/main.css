@@ -70,3 +70,7 @@ form{
 	justify-content:center; 
 	text-align:center
 }
+
+nav a{
+	text-decoration: none;
+}

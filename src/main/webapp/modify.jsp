@@ -12,10 +12,9 @@
 <jsp:include page="header.jsp"></jsp:include>
 <section>
 	<h2>홈쇼핑 회원 정보 </h2>
-	<form method = "post" action = "m_action.jsp" name=frm>	
+	<form name="frm" action="m_action.jsp">	
 		<table border="1">
 		<%
-			request.setCharacterEncoding("UTF-8");
 			String custno = request.getParameter("custno") ;
 			try {	
 			String sql = "SELECT * FROM tbl_member WHERE custno = ?" ;

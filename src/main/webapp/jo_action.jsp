@@ -11,7 +11,7 @@
 <body>
 <script src="java.js"></script>
 <%
-String custno = request.getParameter("custno");
+Integer custno = Integer.valueOf(request.getParameter("custno"));
 String custname = request.getParameter("custname");
 String phone = request.getParameter("phone");
 String address = request.getParameter("address");
@@ -20,17 +20,17 @@ String grade = request.getParameter("grade");
 String city = request.getParameter("city");
 
 try{
-    Statement stmt = conn.createStatement();
-    int result = stmt.executeUpdate(
-        "INSERT INTO tbl_member VALUES('" 
-        + custno + "','" 
-        + custname + "','" 
-        + phone + "','" 
-        + address + "','" 
-        + joindate + "','" 
-        + grade + "','" 
-        + city + "')"
-    );
+	String sql = "INSERT INTO TBL_MEMBER values(?,?,?,?,?,?,?)";
+	PreparedStatement rstmt = conn.prepareStatement(sql);
+	rstmt.setInt(1, custno);
+	rstmt.setString(2, custname);
+	rstmt.setString(3, phone);
+	rstmt.setString(4, address);
+	rstmt.setString(5, joindate);
+	rstmt.setString(6, grade);
+	rstmt.setString(7, city);
+	
+	int result = rstmt.executeUpdate();
 
     if(result > 0){
 %>
@@ -40,8 +40,7 @@ try{
         </script>
 <%
     }
-
-    stmt.close();
+    rstmt.close();
     conn.close();
 }
 catch(Exception e){
