@@ -9,11 +9,11 @@
 </head>
 <body>
 <script src="java.js"></script>
-<jsp:include page="header.jsp"></jsp:include>
+<jsp:include page="header.jsp" />
 <section>
     <h2>홈쇼핑 회원 등록</h2>
     <!-- 입력 유효성 검사, action 작성 -->
-    <form name="frm" onsubmit="return checkIn()" action="jo_action.jsp" >
+    <form name="frm" onsubmit="return checkIn()" action="in_action.jsp" >
         <table border="1">
         <% 
         	try {
@@ -60,6 +60,9 @@
 				</td>
 			</tr>
 		<%
+			rs.close();
+			pstmt.close();
+			conn.close();
 			}
         	catch(Exception e){
         	    out.print("DB 오류 :" + e.getMessage());
@@ -68,6 +71,6 @@
 	</table>
 	</form>
 </section>
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="footer.jsp" />
 </body>
 </html>
